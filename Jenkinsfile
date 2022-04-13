@@ -144,7 +144,7 @@ try {
     },
     'Debian bullseye packaging and signing': {
       node {
-        dir('centreon-widget-live-service-monitoring') {
+        dir('centreon-widget-service-monitoring') {
           checkout scm
         }
         sh 'docker run -i --entrypoint "/src/centreon-widget-service-monitoring/ci/scripts/widget-deb-package.sh" -w "/src" -v "$PWD:/src" -e "DISTRIB=Debian11" -e "VERSION=$VERSION" -e "RELEASE=$RELEASE" registry.centreon.com/centreon-debian11-dependencies:22.04'
